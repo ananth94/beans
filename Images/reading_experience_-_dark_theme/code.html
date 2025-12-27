@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Reading Experience</title>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&amp;family=Noto+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#d46211", // Roasted coffee orange
+                        "background-light": "#f8f7f6",
+                        "background-dark": "#201e1c", // Deep warm charcoal
+                        "surface-dark": "#2c2825",
+                        "text-warm": "#e5dcd6",
+                        "text-muted": "#a89f99"
+                    },
+                    fontFamily: {
+                        "display": ["Newsreader", "serif"],
+                        "sans": ["Noto Sans", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom scrollbar hiding for clean reading */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-gray-900 dark:text-text-warm antialiased selection:bg-primary/30 selection:text-primary">
+<div class="relative flex h-full min-h-screen w-full max-w-md mx-auto flex-col overflow-hidden shadow-2xl bg-background-light dark:bg-background-dark border-x border-gray-200 dark:border-white/5">
+<!-- Status Bar Placeholder (iOS Style) -->
+<div class="sticky top-0 z-50 w-full bg-background-light/95 dark:bg-background-dark/95 backdrop-blur-sm pt-2">
+<!-- Reading Progress Bar -->
+<div class="absolute bottom-0 left-0 h-[2px] w-full bg-gray-200 dark:bg-white/10">
+<div class="h-full w-[35%] bg-primary shadow-[0_0_8px_rgba(212,98,17,0.6)]"></div>
+</div>
+<!-- Header -->
+<div class="flex items-center justify-between px-4 pb-3 pt-2">
+<button class="flex size-10 items-center justify-center rounded-full hover:bg-black/5 dark:hover:bg-white/10 transition-colors text-gray-900 dark:text-text-warm">
+<span class="material-symbols-outlined !text-[28px]">arrow_back_ios_new</span>
+</button>
+<div class="flex items-center gap-2">
+<button aria-label="Appearance" class="flex size-10 items-center justify-center rounded-full hover:bg-black/5 dark:hover:bg-white/10 transition-colors text-gray-900 dark:text-text-warm">
+<span class="material-symbols-outlined !text-[24px]">text_fields</span>
+</button>
+<button aria-label="More options" class="flex size-10 items-center justify-center rounded-full hover:bg-black/5 dark:hover:bg-white/10 transition-colors text-gray-900 dark:text-text-warm">
+<span class="material-symbols-outlined !text-[24px]">more_horiz</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Main Content Area -->
+<main class="flex-1 overflow-y-auto px-6 pb-24 pt-4">
+<!-- Metadata Section -->
+<div class="mb-8">
+<!-- Tag -->
+<div class="flex flex-wrap gap-2 mb-4">
+<span class="inline-flex items-center justify-center rounded-full bg-primary/10 dark:bg-primary/20 px-3 py-1 text-xs font-bold uppercase tracking-wider text-primary">
+                        Coffee Culture
+                    </span>
+<span class="inline-flex items-center justify-center rounded-full bg-gray-100 dark:bg-white/5 px-3 py-1 text-xs font-bold uppercase tracking-wider text-gray-500 dark:text-text-muted">
+                        Long Read
+                    </span>
+</div>
+<!-- Title -->
+<h1 class="text-[32px] md:text-[36px] font-bold leading-[1.15] tracking-tight text-gray-900 dark:text-white mb-5">
+                    The Art of the Morning Brew: Why Rituals Matter
+                </h1>
+<!-- Author Info -->
+<div class="flex items-center gap-3 border-l-2 border-primary pl-4 py-1">
+<div class="size-10 shrink-0 overflow-hidden rounded-full bg-gray-200">
+<!-- Placeholder for author image -->
+<div class="w-full h-full bg-gradient-to-br from-primary/80 to-stone-800" data-alt="Abstract gradient representing author avatar"></div>
+</div>
+<div class="flex flex-col">
+<span class="text-sm font-semibold text-gray-900 dark:text-text-warm">Julian Barnes</span>
+<div class="flex items-center gap-1.5 text-xs text-gray-500 dark:text-text-muted font-sans">
+<span>The New Yorker</span>
+<span class="size-0.5 rounded-full bg-current"></span>
+<span>8 min read</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Featured Image (optional, keeping minimal but impactful) -->
+<div class="relative w-full aspect-[2/1] rounded-2xl overflow-hidden mb-8 shadow-lg">
+<div class="absolute inset-0 bg-gradient-to-t from-background-light dark:from-background-dark to-transparent opacity-60 z-10"></div>
+<!-- Using a gradient div instead of img to avoid external assets per prompt instructions, but conceptually this is the hero image -->
+<div class="w-full h-full bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-amber-900 via-stone-900 to-black" data-alt="Close up of dark coffee beans with steam rising"></div>
+<div class="absolute bottom-3 left-4 z-20">
+<span class="text-[10px] text-white/60 uppercase tracking-widest font-sans">Photo: Unsplash</span>
+</div>
+</div>
+<!-- Article Body -->
+<article class="prose prose-lg dark:prose-invert prose-headings:font-display prose-p:font-display prose-p:text-[19px] prose-p:leading-[1.7] max-w-none text-gray-800 dark:text-text-warm/90">
+<p class="first-letter:text-5xl first-letter:font-bold first-letter:text-primary first-letter:mr-2 first-letter:float-left">
+                    There is something inherently grounding about the sound of beans grinding in the quiet hours of the morning. It's not just about the caffeine; it's the rhythm, the scent, and the patience required. In a world that demands instant gratification, the slow pour-over is a rebellious act of mindfulness.
+                </p>
+<p>
+                    For many, the morning cup is merely a biological necessity, a fuel injection to jumpstart the metabolic engine. But to view it solely as a chemical delivery system is to miss the profound psychological anchor it provides. The ritual itself—heating the water to exactly 205 degrees, measuring the grounds by weight, the bloom—creates a transitional space between the chaos of dreams and the demands of the day.
+                </p>
+<blockquote class="border-l-4 border-primary pl-6 my-8 italic text-2xl text-gray-700 dark:text-white font-medium">
+                    "Coffee is a language in itself, spoken in the quiet dialects of steam and porcelain."
+                </blockquote>
+<h3 class="text-xl font-bold mt-8 mb-4 text-gray-900 dark:text-white">The Chemistry of Comfort</h3>
+<p>
+                    When hot water meets ground coffee, a complex extraction process begins. Over 1,000 chemical compounds contribute to the flavor profile. But beyond the chemistry, there is the atmosphere. The warmth of the mug in your palms acts as a sensory grounding technique, similar to holding a worry stone.
+                </p>
+<p>
+                    In my travels through the coffee houses of Vienna and the espresso bars of Rome, I've noticed a singular commonality: no one rushes the barista. There is a tacit understanding that good things take time. This pause is where the magic happens.
+                </p>
+<p>
+                    We live in an era of notifications, of constant digital pokes and prods. The offline nature of brewing coffee is perhaps its most valuable asset. For those five minutes, you cannot be optimizing, you cannot be multitasking. You must simply be.
+                </p>
+<div class="my-8 h-px w-full bg-gradient-to-r from-transparent via-gray-300 dark:via-white/10 to-transparent"></div>
+<p class="text-sm font-sans text-gray-500 dark:text-text-muted italic">
+                    This article was originally published in the print edition of The New Yorker, titled "Dark Roast Diaries."
+                </p>
+</article>
+<!-- Bottom Action -->
+<div class="mt-12 flex flex-col items-center justify-center gap-6">
+<div class="flex items-center gap-2">
+<span class="h-1 w-1 rounded-full bg-primary"></span>
+<span class="h-1 w-1 rounded-full bg-primary/40"></span>
+<span class="h-1 w-1 rounded-full bg-primary/40"></span>
+</div>
+<button class="group flex items-center gap-2 rounded-full bg-surface-dark dark:bg-white/5 border border-transparent dark:border-white/10 px-8 py-3 text-primary hover:bg-primary hover:text-white transition-all duration-300">
+<span class="material-symbols-outlined text-[20px] transition-transform group-hover:scale-110">check_circle</span>
+<span class="text-sm font-bold tracking-wide">Mark as Read</span>
+</button>
+</div>
+</main>
+<!-- Floating Bottom Bar (Contextual Actions) -->
+<div class="fixed bottom-6 left-0 right-0 z-40 mx-auto w-max px-4">
+<div class="flex items-center gap-1 rounded-full bg-white/90 dark:bg-surface-dark/90 p-1.5 shadow-[0_8px_30px_rgb(0,0,0,0.12)] dark:shadow-[0_8px_30px_rgba(0,0,0,0.5)] backdrop-blur-md border border-gray-100 dark:border-white/5">
+<button class="flex size-10 items-center justify-center rounded-full text-gray-500 dark:text-text-muted hover:bg-black/5 dark:hover:bg-white/10 hover:text-primary transition-colors">
+<span class="material-symbols-outlined !text-[20px]">bookmark_add</span>
+</button>
+<div class="h-4 w-px bg-gray-300 dark:bg-white/10 mx-1"></div>
+<button class="flex size-10 items-center justify-center rounded-full text-gray-500 dark:text-text-muted hover:bg-black/5 dark:hover:bg-white/10 hover:text-primary transition-colors">
+<span class="material-symbols-outlined !text-[20px]">ios_share</span>
+</button>
+<button class="flex size-10 items-center justify-center rounded-full text-gray-500 dark:text-text-muted hover:bg-black/5 dark:hover:bg-white/10 hover:text-primary transition-colors">
+<span class="material-symbols-outlined !text-[20px]">headphones</span>
+</button>
+</div>
+</div>
+</div>
+</body></html>

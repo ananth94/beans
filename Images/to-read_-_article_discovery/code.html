@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>To-Read - Article Discovery</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&amp;family=Noto+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#d46211",
+                        "background-light": "#f8f7f6",
+                        "background-dark": "#221810",
+                        "coffee-text": "#ede0d4",
+                        "coffee-muted": "#a08d84",
+                        "coffee-card": "#2c2119",
+                    },
+                    fontFamily: {
+                        "display": ["Newsreader", "serif"],
+                        "sans": ["Noto Sans", "sans-serif"],
+                    },
+                    borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+                    boxShadow: {
+                        'card': '0 20px 25px -5px rgba(0, 0, 0, 0.4), 0 10px 10px -5px rgba(0, 0, 0, 0.2)',
+                        'inner-light': 'inset 0 2px 4px 0 rgba(255, 255, 255, 0.05)',
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        /* Custom scrollbar hide for cleaner UI */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-coffee-text h-screen w-full flex flex-col overflow-hidden">
+<!-- Top Header -->
+<header class="flex items-center justify-between px-6 pt-6 pb-2 shrink-0 z-10">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-3xl">local_cafe</span>
+<h1 class="text-2xl font-bold tracking-tight italic">To-Read</h1>
+</div>
+<button class="rounded-full p-2 hover:bg-white/5 transition-colors text-coffee-muted hover:text-white">
+<span class="material-symbols-outlined">account_circle</span>
+</button>
+</header>
+<!-- Progress Indicator -->
+<div class="px-6 py-2 shrink-0">
+<div class="flex justify-between items-end mb-1">
+<p class="text-xs font-medium text-coffee-muted uppercase tracking-widest">Daily Brew</p>
+<p class="text-xs font-bold text-primary">60%</p>
+</div>
+<div class="h-1.5 w-full bg-[#3e2d23] rounded-full overflow-hidden">
+<div class="h-full bg-primary rounded-full" style="width: 60%"></div>
+</div>
+</div>
+<!-- Main Card Stack Area -->
+<main class="flex-1 relative flex flex-col items-center justify-center w-full max-w-md mx-auto px-4 py-4 min-h-0">
+<!-- Stack Effect (Card Behind) -->
+<div class="absolute w-[90%] h-[85%] bg-[#3e2d23] rounded-[2.5rem] top-8 opacity-40 scale-95 transform translate-y-4"></div>
+<div class="absolute w-[94%] h-[88%] bg-[#2c2119] rounded-[2.5rem] top-6 opacity-60 scale-[0.98] transform translate-y-2 shadow-lg"></div>
+<!-- Active Card -->
+<div class="relative w-full h-full bg-coffee-card rounded-[2rem] shadow-card overflow-hidden flex flex-col group cursor-pointer border border-white/5">
+<!-- Card Image Area -->
+<div class="relative h-[55%] w-full overflow-hidden">
+<div class="absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-coffee-card z-10"></div>
+<!-- Privacy Shield -->
+<div class="absolute top-4 right-4 z-20 bg-black/40 backdrop-blur-md px-3 py-1 rounded-full flex items-center gap-1 border border-white/10">
+<span class="material-symbols-outlined text-[14px] text-green-400">shield</span>
+<span class="text-[10px] font-sans font-medium text-white/90">Tracker Free</span>
+</div>
+<img alt="Cozy wooden desk with coffee and notebooks" class="w-full h-full object-cover opacity-90 transition-transform duration-700 group-hover:scale-105" data-alt="Top down view of a cozy workspace with coffee and wood textures" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDK5mK3yfsGi_U77bVqqzfhf8doy8W_RWXY782bQLQ_IDHvZL-Z9pZfSdy3ImhMXn8_FWqgh2xm2uC4xkzlROrPlxLjYR40WlUn_MjIExu9FwdpPph7LnUST_kBsW_gLyfBoj2RyyypWAVaPnMf3px6gSgRNMzWv9AW13f8F6U3fetkgfhayMTDAhHbSi8J_RBxZCaZqBLOtL-8Vc02NLHqk9ti331Vm8v5Hm-tg-L14XBdgP9z6Pz9dykpW-Kt9Xn0f8jbxTUbviU"/>
+</div>
+<!-- Card Content Area -->
+<div class="flex-1 p-6 flex flex-col justify-between relative z-20 -mt-12">
+<div>
+<!-- Meta Header -->
+<div class="flex items-center gap-3 mb-4">
+<div class="w-8 h-8 rounded-full bg-white p-0.5 shadow-sm overflow-hidden flex items-center justify-center shrink-0">
+<!-- Placeholder Favicon -->
+<div class="w-full h-full bg-black text-white text-[10px] font-bold flex items-center justify-center font-sans">A</div>
+</div>
+<div class="flex flex-col">
+<span class="text-sm font-bold text-white leading-none">The Atlantic</span>
+<span class="text-xs text-coffee-muted mt-0.5">theatlantic.com</span>
+</div>
+</div>
+<!-- Title -->
+<h2 class="text-3xl font-medium text-white leading-[1.1] mb-3">
+                        Why We Need Silence in the Digital Age
+                    </h2>
+<!-- Excerpt -->
+<p class="text-coffee-muted text-lg leading-snug line-clamp-3 opacity-90">
+                        In a world of constant notifications, finding a quiet moment is an act of rebellion. Here is how reclaiming silence can restore our focus.
+                    </p>
+</div>
+<!-- Footer Meta -->
+<div class="flex items-center gap-4 mt-4 pt-4 border-t border-white/10">
+<div class="flex items-center gap-1.5 text-primary">
+<span class="material-symbols-outlined text-[18px]">coffee</span>
+<span class="text-sm font-bold tracking-wide">5 min brew</span>
+</div>
+<span class="w-1 h-1 rounded-full bg-white/20"></span>
+<span class="text-sm text-coffee-muted italic">Tech &amp; Society</span>
+</div>
+</div>
+</div>
+</main>
+<!-- Floating Action Buttons -->
+<div class="shrink-0 pb-2 pt-2 px-8 flex justify-center items-center gap-8 z-20">
+<!-- Skip Button -->
+<button class="group flex flex-col items-center gap-1">
+<div class="w-14 h-14 rounded-full bg-[#33261d] border border-white/5 flex items-center justify-center text-red-400 shadow-lg group-active:scale-95 transition-all hover:bg-[#3e2d23]">
+<span class="material-symbols-outlined text-3xl">close</span>
+</div>
+<span class="text-[10px] font-sans font-bold text-coffee-muted uppercase tracking-wider opacity-0 group-hover:opacity-100 transition-opacity">Skip</span>
+</button>
+<!-- Read Later Button (Main) -->
+<button class="group flex flex-col items-center gap-1 -mt-4">
+<div class="w-16 h-16 rounded-full bg-gradient-to-br from-primary to-[#b04e0b] flex items-center justify-center text-white shadow-lg shadow-primary/20 group-active:scale-95 transition-all hover:brightness-110">
+<span class="material-symbols-outlined text-3xl">bookmark_add</span>
+</div>
+<span class="text-[10px] font-sans font-bold text-primary uppercase tracking-wider">Save</span>
+</button>
+<!-- Open External Button -->
+<button class="group flex flex-col items-center gap-1">
+<div class="w-14 h-14 rounded-full bg-[#33261d] border border-white/5 flex items-center justify-center text-blue-300 shadow-lg group-active:scale-95 transition-all hover:bg-[#3e2d23]">
+<span class="material-symbols-outlined text-2xl">open_in_new</span>
+</div>
+<span class="text-[10px] font-sans font-bold text-coffee-muted uppercase tracking-wider opacity-0 group-hover:opacity-100 transition-opacity">Open</span>
+</button>
+</div>
+<!-- Bottom Navigation -->
+<nav class="bg-[#2c2119] border-t border-[#3e2d23] px-6 pb-6 pt-3 shrink-0">
+<ul class="flex justify-between items-end">
+<li class="flex-1">
+<a class="flex flex-col items-center gap-1 text-primary group" href="#">
+<span class="material-symbols-outlined text-[26px] group-hover:scale-110 transition-transform font-variation-settings-fill">style</span>
+<span class="text-[10px] font-medium tracking-wide">Discovery</span>
+</a>
+</li>
+<li class="flex-1">
+<a class="flex flex-col items-center gap-1 text-coffee-muted hover:text-white transition-colors group" href="#">
+<span class="material-symbols-outlined text-[26px] group-hover:scale-110 transition-transform">collections_bookmark</span>
+<span class="text-[10px] font-medium tracking-wide">Library</span>
+</a>
+</li>
+<li class="flex-1">
+<a class="flex flex-col items-center gap-1 text-coffee-muted hover:text-white transition-colors group" href="#">
+<span class="material-symbols-outlined text-[26px] group-hover:scale-110 transition-transform">tune</span>
+<span class="text-[10px] font-medium tracking-wide">Settings</span>
+</a>
+</li>
+</ul>
+</nav>
+<!-- Add custom CSS for fill variation on icons if needed inline -->
+<style>
+        .font-variation-settings-fill {
+            font-variation-settings: 'FILL' 1;
+        }
+    </style>
+</body></html>

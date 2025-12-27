@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Read - Article Archive</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&amp;family=Noto+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#d46211",
+                        "background-light": "#f8f7f6",
+                        "background-dark": "#221810",
+                        "surface-dark": "#2c2018",
+                        "text-light": "#1a1614",
+                        "text-dark": "#eaddcf",
+                        "muted-light": "#8a7a70",
+                        "muted-dark": "#c9a992",
+                    },
+                    fontFamily: {
+                        "display": ["Newsreader", "serif"],
+                        "sans": ["Noto Sans", "sans-serif"],
+                    },
+                    borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        /* Hide scrollbar for Chrome, Safari and Opera */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        /* Hide scrollbar for IE, Edge and Firefox */
+        .no-scrollbar {
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;  /* Firefox */
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display h-screen flex flex-col antialiased transition-colors duration-300">
+<!-- Top App Bar -->
+<header class="flex items-center justify-between px-6 pt-12 pb-2 bg-background-light dark:bg-background-dark sticky top-0 z-10">
+<h1 class="text-text-light dark:text-text-dark text-3xl font-bold italic tracking-tight">Archive</h1>
+<button class="flex items-center justify-center w-10 h-10 rounded-full bg-transparent hover:bg-black/5 dark:hover:bg-white/10 transition-colors text-text-light dark:text-text-dark">
+<span class="material-symbols-outlined" style="font-size: 28px;">filter_list</span>
+</button>
+</header>
+<!-- Scrollable Content -->
+<main class="flex-1 overflow-y-auto no-scrollbar pb-24">
+<!-- Search Bar -->
+<div class="px-4 py-2 sticky top-0 z-10 bg-background-light/95 dark:bg-background-dark/95 backdrop-blur-sm">
+<div class="relative flex w-full items-center">
+<div class="absolute inset-y-0 left-0 flex items-center pl-4 pointer-events-none">
+<span class="material-symbols-outlined text-muted-light dark:text-muted-dark">search</span>
+</div>
+<input class="block w-full rounded-full border-none bg-white dark:bg-surface-dark py-3.5 pl-12 pr-4 text-text-light dark:text-text-dark placeholder-muted-light dark:placeholder-muted-dark focus:ring-2 focus:ring-primary shadow-sm text-lg" placeholder="Search titles or authors..." type="text"/>
+</div>
+</div>
+<!-- Chips -->
+<div class="flex gap-3 px-4 py-4 overflow-x-auto no-scrollbar items-center">
+<!-- Active Chip -->
+<button class="flex shrink-0 items-center justify-center px-5 py-2 rounded-full bg-primary text-white shadow-md transition-transform active:scale-95">
+<span class="text-sm font-semibold">Most Recent</span>
+</button>
+<!-- Inactive Chips -->
+<button class="flex shrink-0 items-center justify-center px-5 py-2 rounded-full bg-white dark:bg-surface-dark border border-stone-200 dark:border-stone-800 text-text-light dark:text-text-dark transition-colors active:bg-stone-100 dark:active:bg-stone-800">
+<span class="text-sm font-medium">Favorites</span>
+</button>
+<button class="flex shrink-0 items-center justify-center px-5 py-2 rounded-full bg-white dark:bg-surface-dark border border-stone-200 dark:border-stone-800 text-text-light dark:text-text-dark transition-colors active:bg-stone-100 dark:active:bg-stone-800">
+<span class="text-sm font-medium">Long-reads</span>
+</button>
+<button class="flex shrink-0 items-center justify-center px-5 py-2 rounded-full bg-white dark:bg-surface-dark border border-stone-200 dark:border-stone-800 text-text-light dark:text-text-dark transition-colors active:bg-stone-100 dark:active:bg-stone-800">
+<span class="text-sm font-medium">Coffee Culture</span>
+</button>
+<button class="flex shrink-0 items-center justify-center px-5 py-2 rounded-full bg-white dark:bg-surface-dark border border-stone-200 dark:border-stone-800 text-text-light dark:text-text-dark transition-colors active:bg-stone-100 dark:active:bg-stone-800">
+<span class="text-sm font-medium">Tech</span>
+</button>
+</div>
+<!-- Section: This Week -->
+<div class="mt-2">
+<h3 class="px-6 py-2 text-primary font-bold uppercase tracking-wider text-xs font-sans opacity-80">This Week</h3>
+<!-- List Item 1 -->
+<div class="group flex gap-4 px-4 py-4 mx-2 rounded-2xl hover:bg-black/5 dark:hover:bg-white/5 transition-colors cursor-pointer">
+<div class="shrink-0 pt-1">
+<div class="h-16 w-16 rounded-xl bg-cover bg-center shadow-inner" data-alt="Close up of latte art in a white coffee cup" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCwYtDcCT8Pns-HKzuyR8jwYzME8z6AwdzqWHVNhpRf7Lcb61SKCOaXakPTMTTkrTpfCQm2sC990qwby019WmdHsv63GycIZMTwzJbuy_LT-MnHFdp2hmCq8GRJDDI3aAuKxXh4EmPSzeFToCYdKGMsfR2Fu-65DpJyAkRVx1nRUdU5VPi9MIfIIS0aoNWxz2npApqO1BEfnbR0r3dKRPleiTHPSsyYrV1F9-NbOuF_3XlR6zLgGEXGECepWj5E-jd1iFCubqBq264');"></div>
+</div>
+<div class="flex flex-col flex-1 gap-1 justify-center border-b border-stone-200 dark:border-stone-800/50 pb-4 group-last:border-0 group-last:pb-0">
+<h4 class="text-text-light dark:text-text-dark text-lg font-bold leading-tight">The Third Wave: Beyond the Bean</h4>
+<div class="flex items-center gap-2 text-muted-light dark:text-muted-dark text-sm font-sans mt-0.5">
+<span class="font-medium">Sprudge</span>
+<span class="text-[8px]">•</span>
+<span>5 min</span>
+<span class="text-[8px]">•</span>
+<span>Read Oct 12</span>
+</div>
+</div>
+<div class="shrink-0 pt-1">
+<button class="text-muted-light dark:text-muted-dark hover:text-primary transition-colors p-2">
+<span class="material-symbols-outlined" style="font-size: 20px;">more_vert</span>
+</button>
+</div>
+</div>
+<!-- List Item 2 -->
+<div class="group flex gap-4 px-4 py-4 mx-2 rounded-2xl hover:bg-black/5 dark:hover:bg-white/5 transition-colors cursor-pointer">
+<div class="shrink-0 pt-1">
+<div class="h-16 w-16 rounded-xl bg-gradient-to-br from-amber-800 to-orange-900 flex items-center justify-center text-white shadow-inner" data-alt="Abstract gradient representing warm coffee tones">
+<span class="font-display font-bold text-xl italic">NYT</span>
+</div>
+</div>
+<div class="flex flex-col flex-1 gap-1 justify-center border-b border-stone-200 dark:border-stone-800/50 pb-4 group-last:border-0 group-last:pb-0">
+<h4 class="text-text-light dark:text-text-dark text-lg font-bold leading-tight">Why We Read in Cafés</h4>
+<div class="flex items-center gap-2 text-muted-light dark:text-muted-dark text-sm font-sans mt-0.5">
+<span class="font-medium">NY Times</span>
+<span class="text-[8px]">•</span>
+<span>12 min</span>
+<span class="text-[8px]">•</span>
+<span>Read Oct 10</span>
+</div>
+</div>
+<div class="shrink-0 pt-1">
+<button class="text-muted-light dark:text-muted-dark hover:text-primary transition-colors p-2">
+<span class="material-symbols-outlined" style="font-size: 20px;">more_vert</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Section: Last Month -->
+<div class="mt-4">
+<h3 class="px-6 py-2 text-primary font-bold uppercase tracking-wider text-xs font-sans opacity-80">Last Month</h3>
+<!-- List Item 3 -->
+<div class="group flex gap-4 px-4 py-4 mx-2 rounded-2xl hover:bg-black/5 dark:hover:bg-white/5 transition-colors cursor-pointer">
+<div class="shrink-0 pt-1">
+<div class="h-16 w-16 rounded-xl bg-cover bg-center shadow-inner" data-alt="Open book resting on a wooden table" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDd9-bPiUn5mjakLRcCmPRuI_Guemx-fy7loic2hKlKU0jgLpoazobqFBNMDDy-b6TS7EDkPeICju8WpUIrqKc66oC2O4RbH3P1OithN0OuX7iGD3_ckV30IpctWx2GAFDq6a5kVNsErE3oKAEZiPJbiHCsWHe4GMVSQO1xNsCi81okAv6vnxfoqQLnsu0a4QEeCoSFXtcFfoh_lzIUzq6RKxR5zYKFwO6M_y_2c1yzFUwinCz2xeR95NPmUYVrOGmrwH1ssTOs8G0');"></div>
+</div>
+<div class="flex flex-col flex-1 gap-1 justify-center border-b border-stone-200 dark:border-stone-800/50 pb-4 group-last:border-0 group-last:pb-0">
+<h4 class="text-text-light dark:text-text-dark text-lg font-bold leading-tight">Digital Privacy in 2024</h4>
+<div class="flex items-center gap-2 text-muted-light dark:text-muted-dark text-sm font-sans mt-0.5">
+<span class="font-medium">Wired</span>
+<span class="text-[8px]">•</span>
+<span>8 min</span>
+<span class="text-[8px]">•</span>
+<span>Read Sep 28</span>
+</div>
+</div>
+<div class="shrink-0 pt-1">
+<button class="text-muted-light dark:text-muted-dark hover:text-primary transition-colors p-2">
+<span class="material-symbols-outlined" style="font-size: 20px;">more_vert</span>
+</button>
+</div>
+</div>
+<!-- List Item 4 -->
+<div class="group flex gap-4 px-4 py-4 mx-2 rounded-2xl hover:bg-black/5 dark:hover:bg-white/5 transition-colors cursor-pointer">
+<div class="shrink-0 pt-1">
+<div class="h-16 w-16 rounded-xl bg-stone-200 dark:bg-stone-700 flex items-center justify-center text-stone-500 dark:text-stone-400 shadow-inner" data-alt="Default placeholder icon for a blog">
+<span class="material-symbols-outlined">article</span>
+</div>
+</div>
+<div class="flex flex-col flex-1 gap-1 justify-center border-b border-stone-200 dark:border-stone-800/50 pb-4 group-last:border-0 group-last:pb-0">
+<h4 class="text-text-light dark:text-text-dark text-lg font-bold leading-tight">The Art of Slow Living</h4>
+<div class="flex items-center gap-2 text-muted-light dark:text-muted-dark text-sm font-sans mt-0.5">
+<span class="font-medium">Kinfolk</span>
+<span class="text-[8px]">•</span>
+<span>15 min</span>
+<span class="text-[8px]">•</span>
+<span>Read Sep 15</span>
+</div>
+</div>
+<div class="shrink-0 pt-1">
+<button class="text-muted-light dark:text-muted-dark hover:text-primary transition-colors p-2">
+<span class="material-symbols-outlined" style="font-size: 20px;">more_vert</span>
+</button>
+</div>
+</div>
+<!-- List Item 5 -->
+<div class="group flex gap-4 px-4 py-4 mx-2 rounded-2xl hover:bg-black/5 dark:hover:bg-white/5 transition-colors cursor-pointer">
+<div class="shrink-0 pt-1">
+<div class="h-16 w-16 rounded-xl bg-cover bg-center shadow-inner" data-alt="Pour over coffee brewing equipment" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCq1Chgp0Wxd6b9Wh6aPHzd8XybeNUAckL8IpN_dzgFMvDThYXQGFFVDmU84LVtcK5dFzbzKgZwcE6hPPOwh9l7DwGaGZ0Abztn-Y4YRABuVfmvBiFIul-2NFsi_c7smw96Kdl58tmoClp0HUTJpwW4N6kbY3S-Pds6LumNq4_PxJ7y8BvopLUa18jreNo-lVKChr6XW8q9OtakwOkia3b5GLAp7WF5ILlVyuy1C-ccGNwHHSPCl1dIKyXcHpJPipqnL3sXY_tLyB4');"></div>
+</div>
+<div class="flex flex-col flex-1 gap-1 justify-center border-b border-stone-200 dark:border-stone-800/50 pb-4 group-last:border-0 group-last:pb-0">
+<h4 class="text-text-light dark:text-text-dark text-lg font-bold leading-tight">Roasting Basics: A Guide</h4>
+<div class="flex items-center gap-2 text-muted-light dark:text-muted-dark text-sm font-sans mt-0.5">
+<span class="font-medium">Perfect Daily</span>
+<span class="text-[8px]">•</span>
+<span>20 min</span>
+<span class="text-[8px]">•</span>
+<span>Read Sep 02</span>
+</div>
+</div>
+<div class="shrink-0 pt-1">
+<button class="text-muted-light dark:text-muted-dark hover:text-primary transition-colors p-2">
+<span class="material-symbols-outlined" style="font-size: 20px;">more_vert</span>
+</button>
+</div>
+</div>
+</div>
+<!-- End of list spacer -->
+<div class="h-12 flex items-center justify-center opacity-40">
+<span class="material-symbols-outlined text-muted-light dark:text-muted-dark text-2xl">local_cafe</span>
+</div>
+</main>
+<!-- Bottom Navigation -->
+<nav class="fixed bottom-0 w-full bg-background-light dark:bg-background-dark border-t border-stone-200 dark:border-white/10 pb-6 pt-2 z-20">
+<div class="flex justify-around items-center h-14">
+<button class="flex flex-col items-center gap-1 w-16 group">
+<div class="p-1 rounded-full group-hover:bg-stone-100 dark:group-hover:bg-white/5 transition-colors">
+<span class="material-symbols-outlined text-muted-light dark:text-stone-500 text-2xl group-hover:text-primary transition-colors">library_books</span>
+</div>
+<span class="text-[10px] font-sans font-medium text-muted-light dark:text-stone-500">Unread</span>
+</button>
+<button class="flex flex-col items-center gap-1 w-16 group">
+<div class="p-1 rounded-full bg-primary/10">
+<span class="material-symbols-outlined text-primary text-2xl fill-1">inventory_2</span>
+</div>
+<span class="text-[10px] font-sans font-bold text-primary">Archive</span>
+</button>
+<button class="flex flex-col items-center gap-1 w-16 group">
+<div class="p-1 rounded-full group-hover:bg-stone-100 dark:group-hover:bg-white/5 transition-colors">
+<span class="material-symbols-outlined text-muted-light dark:text-stone-500 text-2xl group-hover:text-primary transition-colors">settings</span>
+</div>
+<span class="text-[10px] font-sans font-medium text-muted-light dark:text-stone-500">Settings</span>
+</button>
+</div>
+</nav>
+</body></html>

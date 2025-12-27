@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Save Moment - Brewing Article</title>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&amp;family=Noto+Sans:ital,wght@0,100..900;1,100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#d46211",
+                        "background-light": "#f8f7f6",
+                        "background-dark": "#221810",
+                        "coffee-dark": "#3a2c22",
+                        "coffee-medium": "#674832",
+                    },
+                    fontFamily: {
+                        "display": ["Newsreader", "serif"],
+                        "sans": ["Noto Sans", "sans-serif"]
+                    },
+                    borderRadius: { "DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px" },
+                    animation: {
+                        'cup-bounce': 'cup-bounce 2s infinite ease-in-out',
+                        'steam-rise': 'steam-rise 3s infinite ease-in-out',
+                    },
+                    keyframes: {
+                        'cup-bounce': {
+                            '0%, 100%': { transform: 'translateY(0) rotate(-2deg)' },
+                            '50%': { transform: 'translateY(-10px) rotate(2deg)' },
+                        },
+                        'steam-rise': {
+                            '0%': { opacity: '0', transform: 'translateY(0) scale(0.5)' },
+                            '50%': { opacity: '0.8', transform: 'translateY(-10px) scale(1)' },
+                            '100%': { opacity: '0', transform: 'translateY(-20px) scale(1.5)' },
+                        }
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark transition-colors duration-200">
+<div class="relative flex h-full min-h-screen w-full flex-col font-display overflow-x-hidden max-w-md mx-auto shadow-2xl">
+<div class="flex items-center p-6 justify-between z-10">
+<div class="w-12"></div> 
+<h2 class="text-background-dark dark:text-white text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center opacity-80">Save Moment</h2>
+<div class="flex w-12 items-center justify-end">
+<button class="flex items-center justify-center rounded-full bg-transparent text-background-dark dark:text-white hover:bg-black/5 dark:hover:bg-white/10 transition-colors p-2">
+<span class="material-symbols-outlined" style="font-size: 24px;">close</span>
+</button>
+</div>
+</div>
+<div class="flex-1 flex flex-col items-center justify-center px-6 pb-8 gap-8">
+<div class="relative flex flex-col items-center justify-center py-6">
+<div class="absolute inset-0 bg-primary/10 rounded-full blur-3xl scale-150 animate-pulse"></div>
+<div class="relative w-64 h-64 flex items-center justify-center">
+<div class="absolute -top-8 left-1/2 -translate-x-1/2 flex gap-3 z-0">
+<div class="w-2 h-8 bg-white/20 rounded-full blur-sm animate-[steam-rise_3s_infinite_ease-in-out_0.5s]"></div>
+<div class="w-2 h-10 bg-white/20 rounded-full blur-sm animate-[steam-rise_3s_infinite_ease-in-out]"></div>
+<div class="w-2 h-6 bg-white/20 rounded-full blur-sm animate-[steam-rise_3s_infinite_ease-in-out_1s]"></div>
+</div>
+<div class="relative z-10 animate-[cup-bounce_2s_infinite_ease-in-out]">
+<div class="w-32 h-28 bg-white rounded-b-[4rem] rounded-t-sm relative shadow-xl overflow-hidden border-2 border-gray-100">
+<div class="absolute top-2 left-2 right-2 h-6 bg-[#674832] rounded-[50%] opacity-90"></div>
+<div class="absolute top-10 left-8 w-3 h-3 bg-[#3a2c22] rounded-full animate-blink"></div>
+<div class="absolute top-10 right-8 w-3 h-3 bg-[#3a2c22] rounded-full animate-blink"></div>
+<div class="absolute top-14 left-1/2 -translate-x-1/2 w-6 h-3 border-b-2 border-[#3a2c22] rounded-full"></div>
+<div class="absolute top-12 left-6 w-3 h-2 bg-pink-200/50 rounded-full blur-[1px]"></div>
+<div class="absolute top-12 right-6 w-3 h-2 bg-pink-200/50 rounded-full blur-[1px]"></div>
+</div>
+<div class="absolute top-4 -right-8 w-10 h-12 border-[6px] border-white rounded-r-2xl rounded-l-none z-0"></div>
+<div class="absolute -bottom-2 -left-6 w-44 h-4 bg-white rounded-[50%] shadow-md z-[-1]"></div>
+</div>
+</div>
+<div class="absolute -bottom-4 bg-background-light dark:bg-coffee-dark px-4 py-2 rounded-full shadow-lg border border-primary/20 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary animate-spin" style="font-size: 18px;">autorenew</span>
+<span class="text-xs font-sans font-medium text-primary uppercase tracking-wider">Brewing Complete</span>
+</div>
+</div>
+<div class="flex flex-col items-center gap-2 text-center w-full max-w-xs mx-auto z-10">
+<h1 class="text-background-dark dark:text-white text-4xl font-medium italic leading-tight">
+                    Your coffee is ready!
+                </h1>
+<p class="text-gray-600 dark:text-[#c9a992] text-lg font-normal leading-relaxed">
+                    Added to your Morning Blend.
+                </p>
+</div>
+<div class="w-full bg-white dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded-[2rem] p-4 flex items-center gap-4 shadow-sm backdrop-blur-sm mt-2">
+<div class="h-16 w-16 flex-shrink-0 rounded-xl bg-center bg-cover" data-alt="Abstract cozy reading corner with books and coffee" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCq_KJZNBalHzhPYiu5tLphUCdiGN3NgLEZ4If5pmfVwNex-GgZxNEFp0pzlyIDuGsFrBMqOj_wYKi45O-YQJeSha4_pe2SUw5Suem6N-psc9DVGyg0uE509GdJjb0W7xuKB-G9BeNtoIiFsgZXc2-R0A-vSN-u7n7Y56tL9sNpJEJtYVq8hwatNdhgpkm6hA7-LmK88pN7BVOa3jCpe8CAVzRlQIlBhP44bU4gzM5vbKlTLrn8zIO5e1a2-I_Ck5ZeIhl5mpGwpaA");'>
+</div>
+<div class="flex flex-col flex-1 min-w-0 justify-center">
+<h3 class="text-background-dark dark:text-white text-lg font-bold leading-tight truncate">The Art of Slow Living</h3>
+<div class="flex items-center gap-2 mt-1">
+<span class="text-xs font-sans text-primary bg-primary/10 px-2 py-0.5 rounded-full font-semibold">5 min sip</span>
+<span class="text-xs font-sans text-gray-500 dark:text-gray-400 truncate">• The Atlantic</span>
+</div>
+</div>
+<div class="flex items-center justify-center h-8 w-8 rounded-full bg-green-500/20">
+<span class="material-symbols-outlined text-green-600 dark:text-green-400" style="font-size: 18px;">lock</span>
+</div>
+</div>
+<div class="w-full px-4">
+<div class="flex justify-between items-center mb-2">
+<span class="text-xs text-gray-500 dark:text-[#c9a992]/60 font-sans">Encryption</span>
+<span class="text-xs text-primary font-sans font-bold">100%</span>
+</div>
+<div class="h-1.5 w-full bg-gray-200 dark:bg-white/10 rounded-full overflow-hidden">
+<div class="h-full bg-primary rounded-full w-full"></div>
+</div>
+</div>
+</div>
+<div class="p-6 pt-0 flex flex-col gap-3">
+<button class="w-full h-14 bg-primary hover:bg-primary/90 text-white rounded-full text-xl font-bold font-display shadow-lg shadow-primary/30 flex items-center justify-center gap-2 transition-transform active:scale-[0.98]">
+<span class="material-symbols-outlined">local_cafe</span>
+                Sip Now
+            </button>
+<button class="w-full h-14 bg-transparent border border-gray-300 dark:border-white/20 text-background-dark dark:text-white hover:bg-gray-100 dark:hover:bg-white/5 rounded-full text-lg font-medium font-display flex items-center justify-center gap-2 transition-colors">
+                Save for Later
+            </button>
+</div>
+<div class="h-6 w-full flex justify-center pb-2">
+<div class="w-1/3 h-1 bg-gray-300 dark:bg-white/20 rounded-full"></div>
+</div>
+</div>
+</body></html>
